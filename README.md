@@ -28,9 +28,7 @@ Manual or disjointed warehouse systes lead to inventory inaccuracies, delayed sh
 
 ## How to Run
 
-* Place ```simulation.txt``` in the project root directory.
-* Compile: ```javac *.java```
-* Run: ```java Main```
+TO BE UPDATED
 
 ## Possible Extensions
 

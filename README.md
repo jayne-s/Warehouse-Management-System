@@ -20,11 +20,11 @@ Manual or disjointed warehouse systes lead to inventory inaccuracies, delayed sh
 
 ## Entity Relationship Model
 
-![ER Diagram](er.jpg)
+![ER Diagram](assets/er.jpg)
 
 ## Relational Model
 
-![Relational Diagram](relational.jpg)
+![Relational Diagram](assets/relational.jpg)
 
 ## How to Run
 

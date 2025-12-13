@@ -1,33 +1,26 @@
-# Warehouse Management System (Discrete Event Simulator)
+# Warehouse Management System
 
 **Course:** CS 4347 - Database Systems\
 **Semester:** Spring 2025\
-**Project:** Warehouse Management System - Clothung and Apparel\
-**Language:** Java
+**Project:** Warehouse Management System - Clothing and Apparel\
+**Language:** JavaScript
 
 ## Overview
 
-This project implements a discrete-event network simulator that models single-hop network traffic in a star topology. 
-Hosts communicate by sending ping requests and ping responses, and the simulator computes round-trip time (RTT) for each ping using a Future Event List (FEL).
-The simulation is event-driven and processes events strictly in time order, closely resembling how real-world network simulators operate.
+Manual or disjointed warehouse systes lead to inventory inaccuracies, delayed shipments, and miscommunication between suppliers and distributors. Inaccurate inventory causes delays, lost revenue, and frustrated customers. This project seeks to streamline inventory and supply chain operations by building a data-driven warehouse management system that ensures accuracy, reduces costs, and boosts efficiency. Our warehouse management system simulates a regional clothing distribution network and approaches the aforementioned problem by keeping operations accurate and reliable by connecting suppliers, warehouses, racks, and distributors in one smooth flow. Every item is tracked with precision, reducing errors and providing real-time inventory visibility. 
 
-## Key Features
+## Business Rules
 
-**Discrete Event Simulation**
-* Uses a custom FutureEventList implemented as a doubly-linked list
-* Events are processed in increasing simulation time order
+* Suppliers provide clothing to warehouses through a Supply transaction (tracked by a Supply Chain Manager)
+* Warehouses store clothing in Racks, on a unique Aisle section and Warehouse
+* Inventory Managers oversee clothing items inside the warehouse
+* Regional Managers are linked and supervise multiple warehouses
+* Distributors receive clothing from warehouses via Distribute transaction (managed by a Supply Chain Manager)
+* Every transaction (supply or distribute) includes processing and arrival dates, item counts, and cost or profit details.
 
-**Network Messaging**
-* Supports ping requests and ping responses
-* Calculates and reports RTT for each completed ping
+## Entity Relationship Model
 
-**Star Topology**
-* One central host connected to multiple neighboring hosts
-* Communication is always between neighbors
-
-**Extensible Design**
-* Built using abstract classes and interfaces
-* Designed to mirror real-world simulation frameworks
+![ER Diagram](er.jpg)
 
 ## Project Components
 

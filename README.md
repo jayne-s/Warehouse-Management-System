@@ -18,13 +18,9 @@ Manual or disjointed warehouse systes lead to inventory inaccuracies, delayed sh
 * Distributors receive clothing from warehouses via Distribute transaction (managed by a Supply Chain Manager)
 * Every transaction (supply or distribute) includes processing and arrival dates, item counts, and cost or profit details.
 
-## Entity Relationship Model
+## Enhanced Entity Relationship Model
 
 ![ER Diagram](assets/er.jpg)
-
-## Relational Model
-
-![Relational Diagram](assets/relational.jpg)
 
 ## How to Run
 

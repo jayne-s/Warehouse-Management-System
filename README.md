@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 4. Setup MySQL Database
 
-Open MySQL Workbench and run:
+* Open MySQL Workbench and run:
 ```
 SOURCE setup.sql;
 ```

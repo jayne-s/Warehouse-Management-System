@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Warehouse Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'inventory/style.css' %}"/>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Warehouse Management</h1>
+        <p>Inventory Dashboard</p>
+    </div>
+
+<div class = "controls">
+    <form id="filterForm" method="get">
+        <select name="sort_by" onchange="this.form.submit()">
+            <option value="clothing__size">Sort by Size</option>
+            <option value="quantity">Sort by Quantity</option>
+        </select>
+
+        <select name="order" onchange="this.form.submit()">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+
+         <input type="text" name="search" placeholder="Search material..." value="{{ request.GET.search }}" onkeypress="if(event.keyCode==13) this.form.submit()">
+
+    </form>
+   
+</div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Material</th>
+                    <th>Type</th>
+                    <th>Quantity</th>
+                    <th>Warehouse</th>
+                    <th>Warehouse ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.clothing.size }}</td>
+                <td>{{ item.clothing.color }}</td>
+                <td>{{ item.clothing.material }}</td>
+                <td>{{ item.clothing.clothing_type }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>Warehouse {{ item.rack.warehouse.warehouse_id }}</td>
+                 <td>{{ item.inventory_id }}</td>
+                <td>
+                    <form method="post" action="{% url 'sell_item' item.inventory_id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="Submit" onclick="return confirm('Are you sure you want to sell this item?')">Sell</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+    
+    <form method="post" action="{% url 'add_item' %}">
+        {% csrf_token %}
+    
+    <div class="form-card">
+        
+        <h3>Add Inventory Item</h3>
+
+        <div class="form-grid">
+            <input name="supplier" placeholder="Supplier">
+            <input name="size" placeholder="Size">
+            <input name="color"placeholder="Color">
+            <input name="material" placeholder="Material">
+            <input name="type" placeholder="Type">
+            <input name="quantity" placeholder="Quantity">
+            <input name="warehouse_id" placeholder="Warehouse ID">
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary">Add Item</button>
+        </div>
+
+    </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

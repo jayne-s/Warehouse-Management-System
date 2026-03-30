@@ -56,7 +56,7 @@ SOURCE setup.sql;
 
 5. Configure Database Variables
 
-Set the Database Name, Username, Password, Host, and Port.
+* Set the Database Name, Username, Password, Host, and Port.
 
 6. Run Server
 

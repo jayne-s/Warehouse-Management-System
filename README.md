@@ -3,7 +3,7 @@
 **Course:** CS 4347 - Database Systems\
 **Semester:** Spring 2025\
 **Project:** Warehouse Management System - Clothing and Apparel\
-**Languages:** Django, Python, MySQL, HTML/CSS
+**Languages & Frameworks:** Django, Python, MySQL, HTML/CSS
 
 ## Overview
 
